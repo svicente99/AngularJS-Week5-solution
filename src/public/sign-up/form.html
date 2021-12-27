@@ -1,0 +1,75 @@
+<div class="container" id="signup">
+
+    <fieldset>
+	    <legend>Please, fill in the fields below: </legend>
+        <form name='regForm' novalidate ng-submit="sign_up()">
+
+        First name:&nbsp;&nbsp; <input type="text" name="firstname"
+          ng-model="form.user.firstname"
+		  required minlength="3" ng-maxlength="15">
+          <span class="msg_valid"
+            ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
+            &larr; must be at least 3 characters long
+          </span>
+          <span class="msg_valid" ng-if="regForm.firstname.$error.maxlength && regForm.firstname.$touched">
+            &larr; must not be longer than 15 characters
+          </span>
+		&nbsp;&nbsp;
+		Last name: &nbsp;<input type="text" name="lastname"
+          ng-model="form.user.lastname"
+		  required minlength="3" ng-maxlength="15">
+          <span class="msg_valid"
+            ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+            &larr; must be at least 3 characters long
+          </span>
+          <span class="msg_valid" ng-if="regForm.lastname.$error.maxlength && regForm.lastname.$touched">
+            &larr; must not be longer than 15 characters
+          </span>
+        <br>
+
+		Your best e-mail:
+        <input type="email" name="email" style="width:247px"
+          ng-model="form.user.email"
+          required>
+          <span class="msg_valid" ng-if="regForm.email.$invalid && regForm.email.$touched">
+            &larr; must be a valid email address format: login@domain_server
+          </span>
+		<br>
+
+		Your phone number:
+        <input type="text" name="phone" placeholder="###-###-####"
+          ng-model="form.user.phone" style="width:120px"
+		  required  pattern="(\d{3})-(\d{3})-(\d{4})">
+          <span class="msg_valid" ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+            &larr; phone must be in the format ###-###-####
+          </span>
+		<br>
+ 		Favorite dish: &nbsp;<input type="text" name="dish" class="dish" ng-model="dishPlate" 
+		  style="width:130px" placeholder="short name of plate" value=""
+		  title="example: A1, F2, VG3">
+          <span class="dish_invalid" ng-if="dish_invalid">
+		  &larr; Dish isn't found in our menu. Please, choose other...
+          </span>
+        &nbsp;<strong>or</strong>&nbsp;		
+
+		<select name="selDish" class="dish" 
+		  ng-model="dishCategory">
+		  <option value="" disabled selected>-- choose a category--</option>
+		  <option ng:repeat="dish in dishCategories | orderBy: 'name'"
+		   value="{{dish.short_name}}">{{dish.name}} [{{dish.short_name}}]
+		  </option>
+		</select>
+        <br>
+
+        <input type="submit" value="Submit"
+          ng-disabled="!form_valid(regForm.$valid)">
+          <span class="info_form" ng-if="!data_saved">
+		  All fields ok? {{ (regForm.$valid ? ' YES (can submit)' : ' no') }}
+          </span>
+          <span class="submited" ng-if="data_saved">&nbsp;&nbsp;
+		  &laquo; Your data has been submitted and saved! &raquo;
+          </span>		
+		</form>
+    </fieldset>
+	
+</div>

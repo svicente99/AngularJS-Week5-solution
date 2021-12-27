@@ -1,0 +1,93 @@
+.loading-indicator {
+    display: block;
+    width: 70px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 40%;
+    z-index: 100;
+    background-color: #FFF;
+}
+
+.loading-indicator img {
+    width: 70px;
+    background-color: #FFF;
+}
+
+.ui-view-placeholder {
+    margin-top: 60px;
+}
+
+#signup {
+	font-size: 0.8em;
+	background-color: #b0b0b0;
+	padding-bottom: 10px;
+	color: #ffe;
+}
+
+input {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: blue;
+}
+input.dish {
+  text-transform: uppercase;
+  font-size: 0.85em;
+}
+select.dish {
+  font-size: 16px;
+  color: blue;
+  width: 250px;
+}
+button {
+  font-size: 20px;
+  color: navy;
+}
+
+.ng-touched.ng-valid {
+  border: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+  border: 2px red solid;
+}
+
+span.msg_valid { 
+  color: maroon;
+  background-color: #d0d0d0;
+  padding: 3px;
+}
+span.dish_invalid {
+  color: red;
+  background-color: #d0d0d0;
+  font-size: 0.8em;
+}
+span.info_form {
+  margin-left: 46px; margin-bottom: 5px;
+  color: navy;
+}
+span.submited {
+  color: #002; 
+  font-style: italic; font-weight: bolder; font-size: 1.1em;
+}
+
+a.signup_now {
+  text-decoration: underline;
+  color: yellow;
+}
+
+a[ui-sref]:hover {
+  display: inline-block;
+  cursor: pointer;
+  border: solid black 1px;
+  padding-left: 5px; padding-right: 5px;
+  background-color: #e0e0e0; color: navy;
+  text-decoration: none;
+}
+
+div.image {
+  width: 164px; height: 164px;
+  border: solid 1pt black;
+  border-radius: 4px;
+}

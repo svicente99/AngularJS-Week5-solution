@@ -1,0 +1,37 @@
+<div id="myInfo" class="container">
+
+    <div id="user_info" ng-if="isRegistered()">
+	<fieldset class="user_info">
+	  <legend class="user_info">These are your data saved:</legend>
+	  <div class="row">
+	  <div class="col-md-9">
+        Your name:&nbsp;&nbsp; 
+		  <input type="text" name="firstname" readonly value="{{first_name}}">
+          <input type="text" name="lastname" readonly value="{{last_name}}">
+        <br>
+        Your best e-mail: 
+		  <input type="email" name="email" size="35" readonly value="{{e_mail}}">
+          <br>
+        Your phone number: 
+		  <input type="text" name="phone" pattern="(\d{3})-(\d{3})-(\d{4})"
+		   readonly value="{{phone}}">&nbsp;&nbsp;
+		<br>
+ 		Favorite dish: 
+		  <input type="text" class="dish" name="dish" readonly size="50" value="{{dish_initials}} - {{dish_name}}">
+	  </div>
+	  <div class="col-md-3">
+        <div class="card image">
+	      <img width="160" height="160" ng-src="{{dish_image}}" 
+		   alt="{{dish_initials}}" title="{{dish_name}}">
+        </div>
+      </div>
+	  </div> <!-- end of class row -->
+	</fieldset>
+	</div>
+	
+	<div id="none_info" ng-if="!isRegistered()">
+		Not Signed Up Yet. 
+        <a class="signup_now" ui-sref="public.sign-up">Sign up Now!</a>
+    </div>
+	
+</div>
