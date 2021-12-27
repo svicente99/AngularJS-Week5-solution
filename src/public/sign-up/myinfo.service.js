@@ -2,7 +2,7 @@
 "use strict";
 
 angular.module('public')
- .constant('ImagesPath', '/images/menu/')
+ .constant('ImagesPath', './images/menu/')
  .service('MyInfoService', MyInfoService);
 
 
