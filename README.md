@@ -1,6 +1,6 @@
 # AngularJS-Week5-solution
 
-Repository to source code for the <b>Assignment 5</b> solution in <b>Single Page Web Applications with AngularJS</b>.<br>
+Repository to source code for the <b>Assignment 5</b> solution in <b>Single Page Web Applications with AngularJS</b> (the last one!).<br>
 Johns Hopkins University - Coursera
 
 You may test this same code online. It's published in Github pages:
